@@ -1,0 +1,88 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block script%}
+<script src="{% static 'posts/detail.js'%} " defer></script>
+{%endblock script%}
+{%block title%}
+    {{obj.title}} 
+{%endblock title%}
+
+
+{%block content%}
+<div class="container mt-2">
+        <!-- update modal -->
+        <div class="modal fade" id="updatePost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">update post</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div id="alert-box"></div>
+                        <form action="" id="update-form">
+                            {%csrf_token%}
+                            {{form}}
+                            <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                                    <button type="submit" class="btn btn-success">Update</button>
+                            </div>
+                        </form>
+                    </div>
+        
+                  </div>
+                </div>
+              </div>
+
+
+        <!-- Delete modal -->
+        <div class="modal fade" id="deletePost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">delete post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure to delete <b>"{{obj.title}}"</b>?
+                  <form action="" id="post-form">
+                    <div id="alert-box"></div>
+                      {%csrf_token%}
+                    
+                      <div class="modal-footer">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="No"></button>
+                              <button type="submit" class="btn btn-success">Yes</button>
+                      </div>
+                  </form>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+
+
+    <div id="post-box"></div>
+    <button id="back-btn" class="btn btn-info">back</button>
+    <button id="update-btn" class="btn btn-primary hide_me" data-bs-toggle="modal" data-bs-target="#updatePost">update</button>
+   
+    <button id="delete-btn" class="btn btn-danger hide_me"  data-bs-toggle="modal" data-bs-target="#deletePost">delete</button>
+    <div id = "spinner-box">
+        <div class="spinner-border text-center" role="status"></div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+

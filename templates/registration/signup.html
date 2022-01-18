@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%load static%}
+{%load crispy_forms_tags%}
+
+{%block content%}
+<div class="signup-container">
+<form action="{% url 'signup'%}" method = "POST" style="border:1px solid #ccc">
+    {%csrf_token%}
+  
+      <h1>Sign Up</h1>
+      {%for msg in messages%}
+        {{msg}}
+      {%endfor%}
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+     {{form |crispy}}
+  
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+  
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <a type="button" href = "{%url 'login'%}" class="btn btn-danger">Already have an account?login here</a>
+        <button type="submit" class="btn btn-secondary">Sign Up</button>
+      </div>
+   
+  </form> 
+</div>
+  {%endblock content%}

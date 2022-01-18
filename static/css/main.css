@@ -1,0 +1,102 @@
+* {
+  margin:0;
+  padding: 0;
+
+}
+
+
+.marsil-navbar {
+  background:linear-gradient(to left,rgb(219, 41, 196),rgba(219, 41, 196,1))
+}
+
+li {
+  font-size: 25px;
+  font-weight:800px;
+  font-family:Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+
+#load-btn {
+margin: 100px;
+height: 60px;
+width: 600px;
+border-radius: 100px;
+background-color: rgb(149, 73, 221);
+/* animation-name: load-more;
+animation-delay:300ms;
+animation-duration: 2s;
+animation-iteration-count: infinite; */
+}
+
+.box-view-comment-like {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: baseline;
+}
+
+.item-view-comment-like {
+  margin:30px 10px;
+}
+
+#box-view {
+
+  border-radius: 100px;
+  width: 200px;
+  height:40px;
+  background-color: rgb(110, 44, 112);
+  text-align: center;
+
+ 
+}
+#box-comment {
+  border-radius: 100px;
+  width: 200px;
+  background-color: rgb(110, 44, 112);
+  text-align: center;
+
+}
+.box-like-unlike {
+  border-radius: 100px;
+  width: 200px;
+  background-color: rgb(110, 44, 112);
+  text-align: center;
+
+}
+
+.post-title {
+  font-size:50px;
+  font-family: sans-serif;
+  font-weight: 800px;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.post-title-line {
+  border: 2px double rgba(188, 0, 235, 0.1);
+  background-color: rgba(188, 0, 235, 1);
+  padding: 3px;
+  width: 20%;
+}
+
+.post-body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  width:70%;
+  background: linear-gradient(to right,rgba(188, 0, 235, 1),rgba(188, 0, 235, 0.3))
+  
+
+}
+
+
+.signup-container {
+  display: grid;
+  grid-template-columns: auto;
+
+}
+.clearfix{
+  display: flex;
+  justify-content:space-evenly;
+}
